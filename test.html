@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-TileColor" content="#43A047">
+    <meta name="theme-color" content="#43A047">
+
+    <title>A4 page</title>
+
+    <style>
+      /* Font and bg color */
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        font-size: 0.87em; /* 0.81em is looking good */
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        background: white;
+        margin: 0;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+
+      /* Main page layout an styles */
+      .page {
+        display: block;
+        background: white;
+        width: 100%;
+      }
+      article {
+        width: 100%;
+        height: 100%;
+        padding: 16px 16px 72px 16px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+      }
+
+      /* Large mode (common for screen and print) */
+      @media print, screen and (min-width: 1024px) {
+        article {
+          padding: 14mm 17mm;
+        }
+      }
+
+      /* Large screens */
+      @media screen and (min-width: 1024px) {
+        body {
+          background-color: rgb(204,204,204);
+        }
+        .page {
+          width: 210mm;
+          height: 297mm;
+          margin: 5mm auto;
+          -webkit-box-shadow: 0 0 5mm rgba(0,0,0,0.5);
+                  box-shadow: 0 0 5mm rgba(0,0,0,0.5);
+        }
+      }
+
+      /* Print mode */
+      @media print {
+        .page {
+          height: 296.6mm; /* Firefox weirdness: if set to 297mm, you get 2 pages... */
+          margin: 0;
+          -webkit-box-shadow: 0;
+                  box-shadow: 0;
+        }
+        .btn-round {
+          display: none !important;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0mm;
+      }
+
+      /* Buttons */
+      .noselect {
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+                  user-select: none; /* Standard */
+      }
+      .btn-round {
+        cursor: pointer;
+        background-color: #43A047;
+        border-radius: 999em;
+        width: 56px;
+        height: 56px;
+        line-height: 1;
+        font-size: 36px;
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        transition: 0.2s;
+        transition-delay: 0.2s;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+      .btn-round svg {
+        pointer-events: none;
+        position: absolute;
+        display: block;
+        top: 16px;
+        left: 16px;
+        height: 24px;
+        width: 24px;
+        fill: white;
+      }
+      .btn-round:active {
+        transition-delay: 0s;
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    0 5px 5px -3px rgba(0, 0, 0, 0.4);
+      }
+      .btn-round.white {
+        background-color: white;
+      }
+      .btn-round.white svg {
+        fill: #43A047;
+      }
+
+      /* Buttons - Specific */
+      .btn-print {
+        display: none;
+        position: fixed;
+        right: 16px;
+        bottom: 88px;
+      }
+      .btn-download {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      /* Error message */
+      #error {
+        display: none;
+        padding: 3em;
+      }
+      #error h1 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cv">
+      <div class="page">
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            In fine principium.
+          </p>
+        </article>
+      </div>
+      <div id="btnPrint" title="Print…" class="btn-round btn-print noselect">
+        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+          <g><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"></path></g>
+        </svg>
+      </div>
+      <a href="./test.pdf" download title="Download as PDF" class="btn-round btn-download white noselect">
+        <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+          <g><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path></g>
+        </svg>
+      </a>
+    </div>
+    <div id="error">
+      <h1>You must use a modern browser to view this page.<br/>
+        If you do not have one, please choose <a href="https://whatbrowser.org" target="_blank">over here</a>.</h1>
+    </div>
+
+    <script type="text/javascript" src="./ua-parser.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var result = new UAParser().getResult();
+        if (result.browser.name === 'IE') { // Unsupported browsers
+          document.getElementById('cv').style.display = 'none';
+          document.getElementById('error').style.display = 'block';
+        }
+        if (result.browser.name !== 'Safari' && !result.device.type) { // Problematic print
+          document.getElementById('btnPrint').style.display = 'block';
+        }
+        document.getElementById('btnPrint').onclick = function() {
+          window.print();
+        };
+      })();
+    </script>
+  </body>
+</html>
